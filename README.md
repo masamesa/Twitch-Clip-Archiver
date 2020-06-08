@@ -1,4 +1,8 @@
 # Twitch-Clip-Archiver
+<img src="https://i.gyazo.com/a9255a38f630e6f38adf1c734318f0a8.png">
+<img src="https://i.gyazo.com/94d6b0b3581510c44c07d740aed99d8a.png">
+
+
 
 <b> REQUIREMENTS </b>
 
