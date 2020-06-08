@@ -2,10 +2,14 @@
 
 <b> REQUIREMENTS </b>
 
+
 .Net core 3.1 
+
 64 bit: https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.300-windows-x64-installer
 
 32 bit: https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.300-windows-x86-installer
+
+
 
 <b> DOWNLOAD BINARIES </b>
 
