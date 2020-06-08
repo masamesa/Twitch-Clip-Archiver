@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "mutk4C6xDig/2aIomobe4wQbbYACArWqO04oDBUIM7gB5fQ4ksJ+k2QPMQbk4eo3CzFZT8k4PrLVo2W7ervZMw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Extensions\\Twitch Clip Archiver.Extensions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

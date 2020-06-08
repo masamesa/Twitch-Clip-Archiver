@@ -1,0 +1,30 @@
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.csprojAssemblyReference.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver_MarkupCompile.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver_MarkupCompile.lref
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.exe
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.deps.json
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.runtimeconfig.json
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.runtimeconfig.dev.json
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\ControlzEx.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\MahApps.Metro.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.g.resources
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.AssemblyInfoInputs.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.AssemblyInfo.cs
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.csproj.CopyComplete
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.genruntimeconfig.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.Models.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.Models.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.Extensions.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.Extensions.pdb

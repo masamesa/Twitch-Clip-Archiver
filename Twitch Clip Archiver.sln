@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitch Clip Archiver", "Twitch Clip Archiver\Twitch Clip Archiver.csproj", "{11188007-B078-45D3-AA45-0D46861F63F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twitch Clip Archiver.Models", "Twitch Clip Archiver.Models\Twitch Clip Archiver.Models.csproj", "{7BCB3163-EB23-4B50-A4DC-3B921202C252}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitch Clip Archiver.Extensions", "Twitch Clip Archiver.Extensions\Twitch Clip Archiver.Extensions.csproj", "{FFB4DBE1-FFCA-4E85-8ACD-5002A2FC4339}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11188007-B078-45D3-AA45-0D46861F63F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11188007-B078-45D3-AA45-0D46861F63F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11188007-B078-45D3-AA45-0D46861F63F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11188007-B078-45D3-AA45-0D46861F63F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCB3163-EB23-4B50-A4DC-3B921202C252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCB3163-EB23-4B50-A4DC-3B921202C252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCB3163-EB23-4B50-A4DC-3B921202C252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCB3163-EB23-4B50-A4DC-3B921202C252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB4DBE1-FFCA-4E85-8ACD-5002A2FC4339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB4DBE1-FFCA-4E85-8ACD-5002A2FC4339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB4DBE1-FFCA-4E85-8ACD-5002A2FC4339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB4DBE1-FFCA-4E85-8ACD-5002A2FC4339}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CC5E262-718A-46B3-88C9-D8B41B9FCB25}
+	EndGlobalSection
+EndGlobal

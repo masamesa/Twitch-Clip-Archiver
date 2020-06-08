@@ -1,0 +1,8 @@
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\bin\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.deps.json
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\bin\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\bin\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\obj\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.AssemblyInfoInputs.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\obj\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.AssemblyInfo.cs
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\obj\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\obj\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Models\obj\Debug\netstandard2.0\win10-x86\Twitch Clip Archiver.Models.pdb

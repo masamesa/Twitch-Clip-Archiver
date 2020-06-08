@@ -1,0 +1,12 @@
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\bin\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.deps.json
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\bin\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\obj\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.csprojAssemblyReference.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\obj\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.AssemblyInfoInputs.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\obj\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.AssemblyInfo.cs
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\bin\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\bin\Debug\netstandard2.0\Twitch Clip Archiver.Models.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\bin\Debug\netstandard2.0\Twitch Clip Archiver.Models.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\obj\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.csproj.CopyComplete
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\obj\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\obj\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\obj\Debug\netstandard2.0\Twitch Clip Archiver.Extensions.csproj.CoreCompileInputs.cache
