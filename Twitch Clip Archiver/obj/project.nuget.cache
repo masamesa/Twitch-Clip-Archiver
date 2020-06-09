@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GRIALKlRN7UyMKAvLVNpnezdRYuJ19R4VAkLm3UelEta30qFO+BSt+Tzx3FwoAc/laDBxw7FKgpJjyYtpSo+vQ==",
+  "dgSpecHash": "yUzubpcdohg8qCkb/LPc5BSxXXSZqs2KTQi6NeBo4p3GLwCVgG8ltEH+n8JJ3BXzDD4KMjG0cqRNvJpbq45Z1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver\\Twitch Clip Archiver.csproj",
   "expectedPackageFiles": [
@@ -9,9 +9,9 @@
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
-    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.4\\microsoft.netcore.app.runtime.win-x86.3.1.4.nupkg.sha512",
-    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.4\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.4.nupkg.sha512",
-    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.4\\microsoft.aspnetcore.app.runtime.win-x86.3.1.4.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.4\\microsoft.netcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.4\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.4.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.4\\microsoft.aspnetcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []

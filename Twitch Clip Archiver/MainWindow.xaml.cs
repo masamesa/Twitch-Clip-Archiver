@@ -14,6 +14,8 @@ namespace Twitch_Clip_Archiver
     using System.Drawing;
     using System.Runtime.InteropServices;
     using Twitch_Clip_Archiver.Extensions;
+    using Twitch_Clip_Archiver.Models;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -49,10 +51,11 @@ namespace Twitch_Clip_Archiver
             if (fe.ShowDialog() == false)
                 return;
 
+            List<ClipModel> tempj = JsonConvert.DeserializeObject<List<ClipModel>>(File.ReadAllText(fd.FileName));
 
             FetchClips fc = new FetchClips();
             AllocConsole();
-            fc.Fetch(TextClientID.Password, TextTwitchName.Text, Path.GetDirectoryName(fe.FileName), fd.FileName);
+            fc.Fetch(TextClientID.Password, tempj.First().clips.First().broadcaster.name, Path.GetDirectoryName(fe.FileName), fd.FileName);
         }
 
         private void Fetch_Click(object sender, RoutedEventArgs e)

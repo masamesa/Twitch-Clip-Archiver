@@ -88,7 +88,7 @@
         }
       }
     },
-    ".NETCoreApp,Version=v3.1/win10-x86": {
+    ".NETCoreApp,Version=v3.1/win10-x64": {
       "ControlzEx/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -394,15 +394,15 @@
             "version": "[3.1.2, 3.1.2]"
           },
           {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
             "version": "[3.1.4, 3.1.4]"
           },
           {
-            "name": "Microsoft.NETCore.App.Runtime.win-x86",
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
             "version": "[3.1.4, 3.1.4]"
           },
           {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
             "version": "[3.1.4, 3.1.4]"
           }
         ],
@@ -418,7 +418,7 @@
       }
     },
     "runtimes": {
-      "win10-x86": {
+      "win10-x64": {
         "#import": []
       }
     }
