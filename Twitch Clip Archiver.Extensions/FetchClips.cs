@@ -18,7 +18,7 @@ namespace Twitch_Clip_Archiver.Extensions
         public int totalclips, current;
         public async void Fetch(string ClientID, string TwitchName, string downloadpath, string jsonpath = null)
         {
-            string url = $"https://api.twitch.tv/kraken/clips/top?channel={TwitchName}&period=week&trending=false&limit=100"; //restore 
+            string url = $"https://api.twitch.tv/kraken/clips/top?channel={TwitchName}&period=all&trending=false&limit=100"; 
             path = downloadpath;
             try
             {
@@ -38,9 +38,12 @@ namespace Twitch_Clip_Archiver.Extensions
 
                 File.Create($@".\{TwitchName}.json").Close();
             Loop:
+                //garbage check, let this slide, brain no work.
+                if (cursor != null)
+                    if(cursor != "")
+                        url = $"{url + "&cursor=" + cursor}";
 
-
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"{url + (cursor != null ? "&cursor=" + cursor : "")}");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "GET";
                 request.Accept = "application/vnd.twitchtv.v5+json";
                 request.Headers.Add($"Client-ID: {ClientID}");
@@ -89,7 +92,7 @@ namespace Twitch_Clip_Archiver.Extensions
             catch (WebException ex)
             {
                 if (ex.Status == WebExceptionStatus.ProtocolError)
-                    Console.WriteLine("Invalid client ID!");
+                     Console.WriteLine("Invalid client ID or issue with twitch servers!");
                 else
                 {
                     Console.Write('[');
