@@ -87,93 +87,6 @@
           "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
         }
       }
-    },
-    ".NETCoreApp,Version=v3.1/win10-x64": {
-      "ControlzEx/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19",
-          "System.Text.Json": "4.7.2"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/ControlzEx.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/ControlzEx.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "MahApps.Metro/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "ControlzEx": "4.3.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/MahApps.Metro.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/MahApps.Metro.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Newtonsoft.Json/12.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "System.Text.Json/4.7.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
-        }
-      },
-      "Twitch Clip Archiver.Extensions/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "Twitch Clip Archiver.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Twitch Clip Archiver.Extensions.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Twitch Clip Archiver.Extensions.dll": {}
-        }
-      },
-      "Twitch Clip Archiver.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -392,18 +305,6 @@
           {
             "name": "Microsoft.AspNetCore.App.Ref",
             "version": "[3.1.2, 3.1.2]"
-          },
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[3.1.4, 3.1.4]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[3.1.4, 3.1.4]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[3.1.4, 3.1.4]"
           }
         ],
         "frameworkReferences": {
@@ -415,11 +316,6 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win10-x64": {
-        "#import": []
       }
     }
   }

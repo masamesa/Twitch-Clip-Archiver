@@ -76,8 +76,7 @@ namespace Twitch_Clip_Archiver.Extensions
                 }
                 cursor = json._cursor;
                 clipjson.Add(json);
-                if (startingcursor == null)
-                    startingcursor = json._cursor;
+                startingcursor = json._cursor;
                 foreach (clips clip in json.clips)
                 {
                     Console.Write('[');
