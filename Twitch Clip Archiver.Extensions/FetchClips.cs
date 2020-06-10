@@ -15,6 +15,8 @@ namespace Twitch_Clip_Archiver.Extensions
     {
 
         public List<ClipModel> clipjson = new List<ClipModel>();
+        public List<ClipModel> Failedclipsjson = new List<ClipModel>();
+
         public string path;
         public int totalclips, current;
         public async void Fetch(string ClientID, string TwitchName, string downloadpath, string jsonpath = null)
@@ -94,26 +96,23 @@ namespace Twitch_Clip_Archiver.Extensions
             }
             catch (WebException ex)
             {
+                var ps = new ProjectSpecific();
+                var dt = DateTime.Now;
+                File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
                 if (ex.Status == WebExceptionStatus.ProtocolError)
-                     Console.WriteLine("Invalid client ID or issue with twitch servers!");
+                    ps.ConsoleRedX("Invalid client ID or issue with twitch servers!", true);
                 else
                 {
-                    Console.Write('[');
-                    Console.Write("X", Console.ForegroundColor = ConsoleColor.Red);
-                    Console.ResetColor();
-                    Console.Write("] ");
-                    Console.WriteLine("Oh no! An error occured with twitch, please screenshot this and show this to masamesa via submitting an issue on github!\r\n" + ex, Console.ForegroundColor = ConsoleColor.Red);
-                    Console.ResetColor();
+                    ps.ConsoleRedX($"Oh no! An error occured with twitch! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt)" +
+                                    $"to masamesa via submitting an issue on github!\r\n" + ex, true);
                 }
             }
             catch (Exception ex)
             {
-                Console.Write('[');
-                Console.Write("X", Console.ForegroundColor = ConsoleColor.Red);
-                Console.ResetColor();
-                Console.Write("] ");
-                Console.WriteLine("Oh no! An error occured, please screenshot this and show this to masamesa via submitting an issue on github!\r\n" + ex, Console.ForegroundColor = ConsoleColor.Red);
-                Console.ResetColor();
+                var dt = DateTime.Now;
+                File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
+                new ProjectSpecific().ConsoleRedX($"Oh no! An error occured! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt)" +
+                                    $"to masamesa via submitting an issue on github!\r\n" + ex, true);
             }
         }
 
@@ -159,20 +158,25 @@ namespace Twitch_Clip_Archiver.Extensions
                 try
                 {
                     var ps = new ProjectSpecific();
+                    var dt = DateTime.Now;
 
-                    ps.ConsoleRedX("Oh no! An error occured, please screenshot this and show this to masamesa via submitting an issue on github!\r\n" + ex, true);
-
+                    ps.ConsoleRedX($"Oh no! An error occured! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt)" +
+                                    $"to masamesa via submitting an issue on github!\r\n" + ex, true);
+                    File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
                     //error handling if for whatever reason the clipjson.clips were to be empty.
                     if (clipjson.First().clips.Length != 0)
                     {
                         ps.ConsoleRedX($"Failed to download clip {current}/{totalclips} - {clipjson.First().clips.First().title}", false);
+                        clips[] carray = { clipjson.First().clips.First() };
+                        if (File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-faileddump.json"))
+                            Failedclipsjson = JsonConvert.DeserializeObject<List<ClipModel>>(File.ReadAllText($@".\{clipjson.First().clips.First().broadcaster.name}-faileddump.json"));
+                        Failedclipsjson.Add(new ClipModel { clips = carray, _cursor = "" });
+                        File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-faileddump.json", JsonConvert.SerializeObject(Failedclipsjson));
 
                         clipjson.First().clips = clipjson.First().clips.Where((source, index) => index != 0).ToArray();
                     }
                     else
-                    {
                         clipjson.RemoveAt(0);
-                    }
 
                     ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
 
@@ -186,9 +190,11 @@ namespace Twitch_Clip_Archiver.Extensions
                 catch(Exception err)
                 {
                     var ps = new ProjectSpecific();
+                    var dt = DateTime.Now;
 
-                    ps.ConsoleRedX($"EMERGENCY BACKUP MADE.\r\nPLEASE TRY AGAIN AND SUBMIT AN ISSUE ON GITHUB, THIS IS VERY ABNORMAL.\r\n{err}", true);
-                    
+                    ps.ConsoleRedX($"EMERGENCY BACKUP MADE.\r\nPLEASE TRY AGAIN AND SUBMIT AN ISSUE ON GITHUB WITH A SCREENSHOT AND THE CRASH REPORT LOCATED AT ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt), THIS IS VERY ABNORMAL.\r\n{err}", true);
+                    File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
+
                     ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
 
                     if (!File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json"))
