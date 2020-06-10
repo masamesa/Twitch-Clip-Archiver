@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Net;
 using System.IO;
-using System.Collections.Generic;
+using System.Net;
+using System.Web;
 using System.Linq;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
@@ -18,18 +19,25 @@ namespace Twitch_Clip_Archiver.Extensions
         public int totalclips, current;
         public async void Fetch(string ClientID, string TwitchName, string downloadpath, string jsonpath = null)
         {
-            string url = $"https://api.twitch.tv/kraken/clips/top?channel={TwitchName}&period=all&trending=false&limit=100"; 
+            string url = $"https://api.twitch.tv/kraken/clips/top?channel={TwitchName}&period=all&trending=false&limit=100"; //change
             path = downloadpath;
             try
             {
                 string cursor = null;
                 string startingcursor = null;
+                var ps = new ProjectSpecific();
                 if (jsonpath != null)
                 {
                     List<ClipModel> tempj = JsonConvert.DeserializeObject<List<ClipModel>>(File.ReadAllText(jsonpath));
                     if (tempj != null)
                     {
-                        clipjson = tempj;
+                        var rcc = await ps.clipCount(tempj);
+                        if (tempj.Last()._cursor == "")
+                        {
+                            clipjson = rcc.Item2;
+                            Download(downloadpath, rcc.Item1);
+                        }
+                        clipjson = rcc.Item2;
                         startingcursor = clipjson.First()._cursor;
                         cursor = clipjson.Last()._cursor;
                     }
@@ -54,36 +62,32 @@ namespace Twitch_Clip_Archiver.Extensions
 
                 if (json.clips.Length == 0 && clipjson.Count == 0)
                 {
-                    Console.Write('[');
-                    Console.Write("X", Console.ForegroundColor = ConsoleColor.Red);
-                    Console.ResetColor();
-                    Console.Write("] ");
-                    Console.WriteLine($"Could not locate any clips for {TwitchName}");
+                    ps.ConsoleRedX($"Could not locate any clips for {TwitchName}", false);
                     return;
                 }
 
                 if (json._cursor == startingcursor & cursor != null)
                 {
-                    int clips = 0;
-                    foreach (var clipbundle in clipjson)
-                        clips = clips + clipbundle.clips.Count();
+                    var tresp = await ps.clipCount(clipjson);
+                    int clips = tresp.Item1;
+                    clipjson = tresp.Item2;
                     Console.Clear();
                     Console.WriteLine($"Found {clips} clips!... Starting download!");
-                    File.WriteAllText($@".\{json.clips[0].broadcaster.name}.json", JsonConvert.SerializeObject(clipjson));
+                    File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}.json", JsonConvert.SerializeObject(clipjson));
                     totalclips = clips;
                     Download(downloadpath, clips);
                     return;
                 }
-                cursor = json._cursor;
-                clipjson.Add(json);
-                startingcursor = json._cursor;
-                foreach (clips clip in json.clips)
+                //if for some reason the json.clips is empty, don't add it that way there's no chance of empty arrays causing things to break.
+                if (json.clips.Length != 0)
                 {
-                    Console.Write('[');
-                    Console.Write("✓", Console.ForegroundColor = ConsoleColor.Green);
-                    Console.ResetColor();
-                    Console.Write("] ");
-                    Console.WriteLine(clip.url);
+                    cursor = json._cursor;
+                    clipjson.Add(json);
+                    startingcursor = json._cursor;
+                    foreach (clips clip in json.clips)
+                    {
+                        ps.ConsoleGreenCheck($"{clip.url}");
+                    }
                 }
                 goto Loop;
 
@@ -117,6 +121,7 @@ namespace Twitch_Clip_Archiver.Extensions
         {
             try
             {
+                var ps = new ProjectSpecific();
                 int i = currentpos;
                 foreach (ClipModel model in clipjson)
                     
@@ -131,46 +136,66 @@ namespace Twitch_Clip_Archiver.Extensions
                             if ($"{clip.broadcaster.name}_{clip.title}_{clip.created_at}".Contains(c.ToString()))
                                 clean = $"{clip.broadcaster.name}_{clip.title}_{clip.created_at}".Replace(c, '-').Replace('<', '-').Replace('>', '-').Replace('?', '-').Replace('|', '-').Replace('*', '-');
                         await wc.DownloadFileTaskAsync((new Uri($"{ url[0] + ".mp4" }")), path + '\\' + clean.Trim().Replace(':', '-').Replace('"', '_') + ".mp4");
-                        Console.Write('[');
-                        Console.Write("✓", Console.ForegroundColor = ConsoleColor.Green);
-                        Console.ResetColor();
-                        Console.Write("] ");
-                        Console.WriteLine($"Downloaded clip {i}/{lcount} - {clip.title}");
-                        model.clips = model.clips.Where((source, index) => index != 0).ToArray();
+                        ps.ConsoleGreenCheck($"Downloaded clip {i}/{lcount} - {clip.title} - {clip.url.Split('?')[0]}");
+                        
+                        if (model.clips.Length != 0)
+                            model.clips = model.clips.Where((source, index) => index != 0).ToArray();
+                        else
+                            break;
                     }
-                clipjson.RemoveAt(0);
+
+
+                 if (clipjson.Count != 0)
+                    clipjson.RemoveAt(0);
+                 else
+                 {
+                    ps.ConsoleGreenCheck("Finished downloading!");
+                    return;
+                 }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Console.Write('[');
-                Console.Write("X", Console.ForegroundColor = ConsoleColor.Red);
-                Console.ResetColor();
-                Console.Write("] ");
-                Console.WriteLine("Oh no! An error occured, please screenshot this and show this to masamesa via submitting an issue on github!\r\n" + ex, Console.ForegroundColor = ConsoleColor.Red);
-                Console.ResetColor();
-                
-                Console.Write('[');
-                Console.Write("X", Console.ForegroundColor = ConsoleColor.Red);
-                Console.ResetColor();
-                Console.Write("] ");
-                Console.WriteLine($"Failed to download clip {current}/{totalclips} - {clipjson.First().clips.First().title}");
+                try
+                {
+                    var ps = new ProjectSpecific();
+
+                    ps.ConsoleRedX("Oh no! An error occured, please screenshot this and show this to masamesa via submitting an issue on github!\r\n" + ex, true);
+
+                    //error handling if for whatever reason the clipjson.clips were to be empty.
+                    if (clipjson.First().clips.Length != 0)
+                    {
+                        ps.ConsoleRedX($"Failed to download clip {current}/{totalclips} - {clipjson.First().clips.First().title}", false);
+
+                        clipjson.First().clips = clipjson.First().clips.Where((source, index) => index != 0).ToArray();
+                    }
+                    else
+                    {
+                        clipjson.RemoveAt(0);
+                    }
+
+                    ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
 
 
-                clipjson.First().clips = clipjson.First().clips.Where((source, index) => index != 0).ToArray();
+                    if (!File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json"))
+                        File.Create($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json").Close();
 
-                Console.Write('[');
-                Console.Write("✓", Console.ForegroundColor = ConsoleColor.Green);
-                Console.ResetColor();
-                Console.Write("] ");
-                Console.WriteLine($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
+                    File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json", JsonConvert.SerializeObject(clipjson));
+                    Download(path, totalclips, current);
+                }
+                catch(Exception err)
+                {
+                    var ps = new ProjectSpecific();
 
+                    ps.ConsoleRedX($"EMERGENCY BACKUP MADE.\r\nPLEASE TRY AGAIN AND SUBMIT AN ISSUE ON GITHUB, THIS IS VERY ABNORMAL.\r\n{err}", true);
+                    
+                    ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
 
-                if (!File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json"))
-                    File.Create($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json").Close();
+                    if (!File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json"))
+                        File.Create($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json").Close();
 
-                File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json", JsonConvert.SerializeObject(clipjson));
-                Download(path, totalclips, current);
-
+                    File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json", JsonConvert.SerializeObject(clipjson));
+                }
             }
         }
     }
