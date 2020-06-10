@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9d15eCp4xWMx/lKrdY1pHD7Gd4gCo7SlfRU2SSwbDt9ztphPYAcUMmua8c4VBDxWz8iqFOSlM8sIt4OArwNTbw==",
+  "dgSpecHash": "kSt5e0E8FhoLcOji3WV3NHtDMKtOzlvKLWHidtjlT++RuNF9fVXGQI9FYg2jdfNylmgyzlRNU5SLfLQj0AosFQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alex\\Projects\\C#\\twitch clip archiver\\Twitch Clip Archiver.Models\\Twitch Clip Archiver.Models.csproj",
+  "projectFilePath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Models\\Twitch Clip Archiver.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
