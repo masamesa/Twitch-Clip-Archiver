@@ -17,7 +17,7 @@
 
 <b> DOWNLOAD BINARIES </b>
 
-<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.2">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.2)
+<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.3">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.3)
 
 
 <b> Getting a "Client ID" </b>
