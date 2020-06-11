@@ -13,11 +13,11 @@
 
 32 bit: https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.300-windows-x86-installer
 
-
+<a href="https://www.mozilla.org/en-US/firefox/download/thanks/">Firefox</a>( https://www.mozilla.org/en-US/firefox/download/thanks/)
 
 <b> DOWNLOAD BINARIES </b>
 
-<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.3">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.3)
+<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4)
 
 
 <b> Getting a "Client ID" </b>
