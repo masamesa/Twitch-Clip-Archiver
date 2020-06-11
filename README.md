@@ -15,7 +15,7 @@
 
 Firefox
 
-(64/32) bit: https://www.mozilla.org/en-US/firefox/download/thanks/)
+(64/32) bit: https://www.mozilla.org/en-US/firefox/download/thanks
 
 <b> DOWNLOAD BINARIES </b>
 
