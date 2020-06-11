@@ -3,12 +3,21 @@ using System.IO;
 using System.Net;
 using System.Web;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using HtmlAgilityPack;
+using OpenQA.Selenium;
 
 namespace Twitch_Clip_Archiver.Extensions
 {
+    using OpenQA.Selenium.Chrome;
+    using OpenQA.Selenium.Firefox;
+    using OpenQA.Selenium.IE;
+    using OpenQA.Selenium.Support.UI;
+    using System.Text;
     using Twitch_Clip_Archiver.Models;
 
     public class FetchClips
@@ -38,6 +47,7 @@ namespace Twitch_Clip_Archiver.Extensions
                         {
                             clipjson = rcc.Item2;
                             Download(downloadpath, rcc.Item1);
+                            return;
                         }
                         clipjson = rcc.Item2;
                         startingcursor = clipjson.First()._cursor;
@@ -98,45 +108,82 @@ namespace Twitch_Clip_Archiver.Extensions
             {
                 var ps = new ProjectSpecific();
                 var dt = DateTime.Now;
-                File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
+                File.WriteAllText($@".\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt", ex.ToString());
                 if (ex.Status == WebExceptionStatus.ProtocolError)
                     ps.ConsoleRedX("Invalid client ID or issue with twitch servers!", true);
                 else
                 {
-                    ps.ConsoleRedX($"Oh no! An error occured with twitch! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt)" +
+                    ps.ConsoleRedX($"Oh no! An error occured with twitch! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt)" +
                                     $"to masamesa via submitting an issue on github!\r\n" + ex, true);
                 }
             }
             catch (Exception ex)
             {
                 var dt = DateTime.Now;
-                File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
-                new ProjectSpecific().ConsoleRedX($"Oh no! An error occured! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt)" +
+                File.WriteAllText($@".\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt", ex.ToString());
+                new ProjectSpecific().ConsoleRedX($"Oh no! An error occured! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt)" +
                                     $"to masamesa via submitting an issue on github!\r\n" + ex, true);
             }
         }
 
-        public async void Download(string path, int lcount, int currentpos = 0)
+        public void Download(string path, int lcount, int currentpos = 0)
         {
             try
             {
                 var ps = new ProjectSpecific();
-                int i = currentpos;
+                int i = currentpos; 
                 foreach (ClipModel model in clipjson)
                     
                     foreach (clips clip in model.clips)
                     {
+                        int retry = 0;
                         i++; current++;
                         string[] url = Regex.Split(clip.thumbnails.medium, "-preview");
+                        url[0] = url[0] + ".mp4";
+                        if (!Regex.IsMatch(url[0], "offset"))
+                        {
+                            Retry:
+                            var htmldoc = new HtmlDocument();
+                            FirefoxOptions op = new FirefoxOptions();
+                            op.AddArgument("--headless");
+                            op.SetLoggingPreference("driver", LogLevel.Off);
+                            
+                            IWebDriver driver = new FirefoxDriver(op);
+
+                            driver.Navigate().GoToUrl("https://clips.twitch.tv/embed?clip=" + clip.slug);
+                            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+                            htmldoc.LoadHtml(driver.PageSource);
+                            driver.Quit();
+                            retry++;
+                            var node = htmldoc.DocumentNode.SelectSingleNode("//div[@class='clips-embed-page tw-c-background-base tw-full-height']/div[@class='video-player']/div[@class='tw-absolute tw-bottom-0 tw-left-0 tw-overflow-hidden tw-right-0 tw-top-0 video-player__container']/video/@src");
+                            if (retry == 3)
+                            {
+                                ps.ConsoleRedX($"Failed to download clip {current}/{totalclips} - {clipjson.First().clips.First().title}", false);
+                                clips[] carray = { clipjson.First().clips.First() };
+                                if (File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-faileddump.json"))
+                                    Failedclipsjson = JsonConvert.DeserializeObject<List<ClipModel>>(File.ReadAllText($@".\{clipjson.First().clips.First().broadcaster.name}-faileddump.json"));
+                                Failedclipsjson.Add(new ClipModel { clips = carray, _cursor = "" });
+                                File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-faileddump.json", JsonConvert.SerializeObject(Failedclipsjson));
+
+                                clipjson.First().clips = clipjson.First().clips.Where((source, index) => index != 0).ToArray();
+                                goto End;
+                            }
+                            if (node == null)
+                                goto Retry;
+                            url[0] = node.Attributes[2].Value;
+                        }
                         WebClient wc = new WebClient();
                         string clean = null;
                         //temp fix to remove illegal characters
                         foreach (var c in (new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars())))
                             if ($"{clip.broadcaster.name}_{clip.title}_{clip.created_at}".Contains(c.ToString()))
-                                clean = $"{clip.broadcaster.name}_{clip.title}_{clip.created_at}".Replace(c, '-').Replace('<', '-').Replace('>', '-').Replace('?', '-').Replace('|', '-').Replace('*', '-');
-                        await wc.DownloadFileTaskAsync((new Uri($"{ url[0] + ".mp4" }")), path + '\\' + clean.Trim().Replace(':', '-').Replace('"', '_') + ".mp4");
+                                clean = $"{clip.broadcaster.name}_{clip.title}_{clip.created_at}".Replace(c, '-');
+                        clean = clean.Replace('<', '-').Replace('>', '-').Replace('?', '-').Replace('|', '-').Replace('*', '-').Replace(':', '-').Replace('"', '_').Trim();
+
+                        wc.DownloadFile(new Uri(url[0]), path + '\\' + clean + ".mp4");
+
                         ps.ConsoleGreenCheck($"Downloaded clip {i}/{lcount} - {clip.title} - {clip.url.Split('?')[0]}");
-                        
+                        End:
                         if (model.clips.Length != 0)
                             model.clips = model.clips.Where((source, index) => index != 0).ToArray();
                         else
@@ -160,9 +207,9 @@ namespace Twitch_Clip_Archiver.Extensions
                     var ps = new ProjectSpecific();
                     var dt = DateTime.Now;
 
-                    ps.ConsoleRedX($"Oh no! An error occured! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt)" +
+                    ps.ConsoleRedX($"Oh no! An error occured! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt)" +
                                     $"to masamesa via submitting an issue on github!\r\n" + ex, true);
-                    File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
+                    File.WriteAllText($@".\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt", ex.ToString());
                     //error handling if for whatever reason the clipjson.clips were to be empty.
                     if (clipjson.First().clips.Length != 0)
                     {
@@ -192,8 +239,8 @@ namespace Twitch_Clip_Archiver.Extensions
                     var ps = new ProjectSpecific();
                     var dt = DateTime.Now;
 
-                    ps.ConsoleRedX($"EMERGENCY BACKUP MADE.\r\nPLEASE TRY AGAIN AND SUBMIT AN ISSUE ON GITHUB WITH A SCREENSHOT AND THE CRASH REPORT LOCATED AT ({Directory.GetCurrentDirectory() })\\CrashReport_{dt}.txt), THIS IS VERY ABNORMAL.\r\n{err}", true);
-                    File.WriteAllText($@".\CrashReport_{dt}.txt", ex.ToString());
+                    ps.ConsoleRedX($"EMERGENCY BACKUP MADE.\r\nPLEASE TRY AGAIN AND SUBMIT AN ISSUE ON GITHUB WITH A SCREENSHOT AND THE CRASH REPORT LOCATED AT ({Directory.GetCurrentDirectory() })\\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt), THIS IS VERY ABNORMAL.\r\n{err}", true);
+                    File.WriteAllText($@".\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt", err.ToString());
 
                     ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
 

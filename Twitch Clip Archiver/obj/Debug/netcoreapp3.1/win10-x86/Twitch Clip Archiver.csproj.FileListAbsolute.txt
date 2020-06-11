@@ -522,3 +522,5 @@ C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\ne
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\win10-x86\Twitch Clip Archiver.dll
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\win10-x86\Twitch Clip Archiver.pdb
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\win10-x86\Twitch Clip Archiver.genruntimeconfig.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\win10-x86\HtmlAgilityPack.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\win10-x86\WebDriver.dll

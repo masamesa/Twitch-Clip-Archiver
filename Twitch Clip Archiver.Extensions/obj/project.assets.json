@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "HtmlAgilityPack/1.11.24": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -35,49 +44,22 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Twitch Clip Archiver.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
-        }
-      }
-    },
-    ".NETStandard,Version=v2.0/win10-x64": {
-      "Microsoft.NETCore.Platforms/1.1.0": {
+      "Selenium.Firefox.WebDriver/0.26.0": {
         "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
+        "build": {
+          "build/Selenium.Firefox.WebDriver.targets": {}
         }
       },
-      "NETStandard.Library/2.0.3": {
+      "Selenium.WebDriver/4.0.0-alpha05": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0"
+          "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
-          "lib/netstandard1.0/_._": {}
+          "lib/netstandard2.0/WebDriver.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "build": {
-          "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/12.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/WebDriver.dll": {}
         }
       },
       "Twitch Clip Archiver.Models/1.0.0": {
@@ -93,6 +75,54 @@
     }
   },
   "libraries": {
+    "HtmlAgilityPack/1.11.24": {
+      "sha512": "DLcytINO8EfCdBgMGsaz8Tvdgu2Aewoo2XX7WfZuRG9cBQRtbm8JZ4/sMRtFvzehjdIDqubdlQb8TqNfjRMEWg==",
+      "type": "package",
+      "path": "htmlagilitypack/1.11.24",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "htmlagilitypack.1.11.24.nupkg.sha512",
+        "htmlagilitypack.nuspec",
+        "lib/Net35/HtmlAgilityPack.dll",
+        "lib/Net35/HtmlAgilityPack.pdb",
+        "lib/Net35/HtmlAgilityPack.xml",
+        "lib/Net40-client/HtmlAgilityPack.dll",
+        "lib/Net40-client/HtmlAgilityPack.pdb",
+        "lib/Net40-client/HtmlAgilityPack.xml",
+        "lib/Net40/HtmlAgilityPack.XML",
+        "lib/Net40/HtmlAgilityPack.dll",
+        "lib/Net40/HtmlAgilityPack.pdb",
+        "lib/Net45/HtmlAgilityPack.XML",
+        "lib/Net45/HtmlAgilityPack.dll",
+        "lib/Net45/HtmlAgilityPack.pdb",
+        "lib/NetCore45/HtmlAgilityPack.XML",
+        "lib/NetCore45/HtmlAgilityPack.dll",
+        "lib/NetCore45/HtmlAgilityPack.pdb",
+        "lib/netstandard1.3/HtmlAgilityPack.deps.json",
+        "lib/netstandard1.3/HtmlAgilityPack.dll",
+        "lib/netstandard1.3/HtmlAgilityPack.pdb",
+        "lib/netstandard1.3/HtmlAgilityPack.xml",
+        "lib/netstandard1.6/HtmlAgilityPack.deps.json",
+        "lib/netstandard1.6/HtmlAgilityPack.dll",
+        "lib/netstandard1.6/HtmlAgilityPack.pdb",
+        "lib/netstandard1.6/HtmlAgilityPack.xml",
+        "lib/netstandard2.0/HtmlAgilityPack.deps.json",
+        "lib/netstandard2.0/HtmlAgilityPack.dll",
+        "lib/netstandard2.0/HtmlAgilityPack.pdb",
+        "lib/netstandard2.0/HtmlAgilityPack.xml",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.XML",
+        "lib/uap10.0/HtmlAgilityPack.dll",
+        "lib/uap10.0/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.pri"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -266,6 +296,37 @@
         "packageIcon.png"
       ]
     },
+    "Selenium.Firefox.WebDriver/0.26.0": {
+      "sha512": "l0N+Vw4/Y1kq/BX5JnRbgFSVkNC89EH3Vg/T1KlchO9MTOgGVdn2JGqNJWXZ7recxWu7WolCvUBPmzqnMQlSaQ==",
+      "type": "package",
+      "path": "selenium.firefox.webdriver/0.26.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Selenium.Firefox.WebDriver.targets",
+        "driver/geckodriver.exe",
+        "selenium.firefox.webdriver.0.26.0.nupkg.sha512",
+        "selenium.firefox.webdriver.nuspec"
+      ]
+    },
+    "Selenium.WebDriver/4.0.0-alpha05": {
+      "sha512": "ZaaY0T5eTDjxcJSZbgZuVUbc4eCSoY8cCjLHwAjHoeBBZQIq3SrlCTkaFNZ46288niZUlS9a5ehLAF7rpa86zQ==",
+      "type": "package",
+      "path": "selenium.webdriver/4.0.0-alpha05",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/WebDriver.dll",
+        "lib/net45/WebDriver.xml",
+        "lib/net46/WebDriver.dll",
+        "lib/net46/WebDriver.xml",
+        "lib/net47/WebDriver.dll",
+        "lib/net47/WebDriver.xml",
+        "lib/netstandard2.0/WebDriver.dll",
+        "selenium.webdriver.4.0.0-alpha05.nupkg.sha512",
+        "selenium.webdriver.nuspec"
+      ]
+    },
     "Twitch Clip Archiver.Models/1.0.0": {
       "type": "project",
       "path": "../Twitch Clip Archiver.Models/Twitch Clip Archiver.Models.csproj",
@@ -274,8 +335,11 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "HtmlAgilityPack >= 1.11.24",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
+      "Selenium.Firefox.WebDriver >= 0.26.0",
+      "Selenium.WebDriver >= 4.0.0-alpha05",
       "Twitch Clip Archiver.Models >= 1.0.0"
     ]
   },
@@ -287,11 +351,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex\\Projects\\C#\\twitch clip archiver\\Twitch Clip Archiver.Extensions\\Twitch Clip Archiver.Extensions.csproj",
+      "projectUniqueName": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Extensions\\Twitch Clip Archiver.Extensions.csproj",
       "projectName": "Twitch Clip Archiver.Extensions",
-      "projectPath": "C:\\Users\\Alex\\Projects\\C#\\twitch clip archiver\\Twitch Clip Archiver.Extensions\\Twitch Clip Archiver.Extensions.csproj",
+      "projectPath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Extensions\\Twitch Clip Archiver.Extensions.csproj",
       "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex\\Projects\\C#\\twitch clip archiver\\Twitch Clip Archiver.Extensions\\obj\\",
+      "outputPath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Extensions\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -313,8 +377,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Alex\\Projects\\C#\\twitch clip archiver\\Twitch Clip Archiver.Models\\Twitch Clip Archiver.Models.csproj": {
-              "projectPath": "C:\\Users\\Alex\\Projects\\C#\\twitch clip archiver\\Twitch Clip Archiver.Models\\Twitch Clip Archiver.Models.csproj"
+            "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Models\\Twitch Clip Archiver.Models.csproj": {
+              "projectPath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Models\\Twitch Clip Archiver.Models.csproj"
             }
           }
         }
@@ -328,6 +392,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "[1.11.24, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -337,6 +405,14 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.3, )"
+          },
+          "Selenium.Firefox.WebDriver": {
+            "target": "Package",
+            "version": "[0.26.0, )"
+          },
+          "Selenium.WebDriver": {
+            "target": "Package",
+            "version": "[4.0.0-alpha05, )"
           }
         },
         "imports": [
@@ -350,11 +426,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win10-x64": {
-        "#import": []
       }
     }
   }

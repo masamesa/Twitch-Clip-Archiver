@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ESW46fANmRQGuNGY61Mvg3aoReriPn74WaT09dlhVhrkqONyIpvw3JzhfoPRG5lhDUzcXU2nyfOPUss9k5rjeQ==",
+  "dgSpecHash": "nKAYpyxURyID6LCRlMzEpCAcA/c8xvw8cqJugZ7c+y4uvWlU2FiM0YqhTr02f+zZzUnt80FJ3YS1LG6qPbVTJw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alex\\Projects\\C#\\twitch clip archiver\\Twitch Clip Archiver.Extensions\\Twitch Clip Archiver.Extensions.csproj",
+  "projectFilePath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Extensions\\Twitch Clip Archiver.Extensions.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Alex\\.nuget\\packages\\htmlagilitypack\\1.11.24\\htmlagilitypack.1.11.24.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Alex\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\Alex\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\selenium.firefox.webdriver\\0.26.0\\selenium.firefox.webdriver.0.26.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\selenium.webdriver\\4.0.0-alpha05\\selenium.webdriver.4.0.0-alpha05.nupkg.sha512"
   ],
   "logs": []
 }

@@ -52,10 +52,20 @@ namespace Twitch_Clip_Archiver
                 return;
 
             List<ClipModel> tempj = JsonConvert.DeserializeObject<List<ClipModel>>(File.ReadAllText(fd.FileName));
-
-            FetchClips fc = new FetchClips();
-            AllocConsole();
-            fc.Fetch(TextClientID.Password, tempj.First().clips.First().broadcaster.name, Path.GetDirectoryName(fe.FileName), fd.FileName);
+            if (tempj == null)
+            {
+                MessageBox.Show("The file you're trying to open is empty.");
+                return;
+            }
+            foreach (var clip in tempj)
+            {
+                if (clip.clips.First().broadcaster.name != "")
+                {
+                    FetchClips fc = new FetchClips();
+                    AllocConsole();
+                    fc.Fetch(TextClientID.Password, tempj.First().clips.First().broadcaster.name, Path.GetDirectoryName(fe.FileName), fd.FileName);
+                }
+            }
         }
 
         private void Fetch_Click(object sender, RoutedEventArgs e)
