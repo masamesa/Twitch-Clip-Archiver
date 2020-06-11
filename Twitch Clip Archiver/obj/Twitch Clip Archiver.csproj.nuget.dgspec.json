@@ -83,6 +83,11 @@
           "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "win10-x86": {
+          "#import": []
+        }
       }
     },
     "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver.Models\\Twitch Clip Archiver.Models.csproj": {
@@ -143,6 +148,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win10-x86": {
+          "#import": []
         }
       }
     },
@@ -213,6 +223,18 @@
             {
               "name": "Microsoft.AspNetCore.App.Ref",
               "version": "[3.1.2, 3.1.2]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[3.1.4, 3.1.4]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[3.1.4, 3.1.4]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[3.1.4, 3.1.4]"
             }
           ],
           "frameworkReferences": {
@@ -224,6 +246,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win10-x86": {
+          "#import": []
         }
       }
     }
