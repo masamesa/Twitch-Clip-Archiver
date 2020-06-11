@@ -3,6 +3,7 @@
 <img src="https://i.gyazo.com/94d6b0b3581510c44c07d740aed99d8a.png">
 
 <b> SUPPORT </b>
+
 Windows 64/32 bit ✔
 
 Linux ✖
