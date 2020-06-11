@@ -18,7 +18,6 @@ C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\ne
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.g.resources
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.AssemblyInfoInputs.cache
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.AssemblyInfo.cs
-C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.csproj.CopyComplete
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.dll
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.pdb
@@ -28,3 +27,6 @@ C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\ne
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.Models.pdb
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.Extensions.dll
 C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\Twitch Clip Archiver.Extensions.pdb
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\obj\Debug\netcoreapp3.1\Twitch Clip Archiver.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver\bin\Debug\netcoreapp3.1\WebDriver.dll
