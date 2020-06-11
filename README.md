@@ -21,7 +21,7 @@ The program must be ran with admin privileges in order to not break upon startup
 
 <b> DOWNLOAD BINARIES </b>
 
-<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.41">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.41)
+<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4.1">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4.1)
 
 
 <b> Getting a "Client ID" </b>
