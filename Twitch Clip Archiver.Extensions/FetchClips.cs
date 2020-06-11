@@ -17,6 +17,7 @@ namespace Twitch_Clip_Archiver.Extensions
     using OpenQA.Selenium.Firefox;
     using OpenQA.Selenium.IE;
     using OpenQA.Selenium.Support.UI;
+    using System.Diagnostics;
     using System.Text;
     using Twitch_Clip_Archiver.Models;
 
@@ -178,7 +179,7 @@ namespace Twitch_Clip_Archiver.Extensions
                         foreach (var c in (new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars())))
                             if ($"{clip.broadcaster.name}_{clip.title}_{clip.created_at}".Contains(c.ToString()))
                                 clean = $"{clip.broadcaster.name}_{clip.title}_{clip.created_at}".Replace(c, '-');
-                        clean = clean.Replace('<', '-').Replace('>', '-').Replace('?', '-').Replace('|', '-').Replace('*', '-').Replace(':', '-').Replace('"', '_').Trim();
+                        clean = clean.Replace('<', '-').Replace('>', '-').Replace('?', '-').Replace('|', '-').Replace('*', '-').Replace(':', '-').Replace('"', '_').Replace('\'', '-').Replace('\\', '_').Replace('/', '_').Trim();
 
                         wc.DownloadFile(new Uri(url[0]), path + '\\' + clean + ".mp4");
 
@@ -210,8 +211,9 @@ namespace Twitch_Clip_Archiver.Extensions
                     ps.ConsoleRedX($"Oh no! An error occured! Please screenshot this and provide the crash log located at ({Directory.GetCurrentDirectory() })\\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt)" +
                                     $"to masamesa via submitting an issue on github!\r\n" + ex, true);
                     File.WriteAllText($@".\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt", ex.ToString());
-                    //error handling if for whatever reason the clipjson.clips were to be empty.
-                    if (clipjson.First().clips.Length != 0)
+                //error handling if for whatever reason the clipjson.clips were to be empty.
+                start:
+                    if (clipjson.Count != 0 && clipjson.First().clips.Length != 0)
                     {
                         ps.ConsoleRedX($"Failed to download clip {current}/{totalclips} - {clipjson.First().clips.First().title}", false);
                         clips[] carray = { clipjson.First().clips.First() };
@@ -221,18 +223,25 @@ namespace Twitch_Clip_Archiver.Extensions
                         File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-faileddump.json", JsonConvert.SerializeObject(Failedclipsjson));
 
                         clipjson.First().clips = clipjson.First().clips.Where((source, index) => index != 0).ToArray();
+                        ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
+
+
+                        if (!File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json"))
+                            File.Create($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json").Close();
+
+                        File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json", JsonConvert.SerializeObject(clipjson));
+                        Download(path, totalclips, current);
+                    }
+                    else if (clipjson.Count != 0 && clipjson.First().clips.Length == 0)
+                    {
+                        clipjson.RemoveAt(0);
+                        goto start;
                     }
                     else
-                        clipjson.RemoveAt(0);
+                    {
+                        ps.ConsoleRedX("Failed to save and restart! Something went very wrong...", false);
+                    }
 
-                    ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
-
-
-                    if (!File.Exists($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json"))
-                        File.Create($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json").Close();
-
-                    File.WriteAllText($@".\{clipjson.First().clips.First().broadcaster.name}-backup.json", JsonConvert.SerializeObject(clipjson));
-                    Download(path, totalclips, current);
                 }
                 catch(Exception err)
                 {
@@ -240,7 +249,7 @@ namespace Twitch_Clip_Archiver.Extensions
                     var dt = DateTime.Now;
 
                     ps.ConsoleRedX($"EMERGENCY BACKUP MADE.\r\nPLEASE TRY AGAIN AND SUBMIT AN ISSUE ON GITHUB WITH A SCREENSHOT AND THE CRASH REPORT LOCATED AT ({Directory.GetCurrentDirectory() })\\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt), THIS IS VERY ABNORMAL.\r\n{err}", true);
-                    File.WriteAllText($@".\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt", err.ToString());
+                    File.WriteAllText($@".\CrashReport_{dt.ToString().Replace(':', '-').Replace('/', '-')}.txt", err.ToString() + "\r\nEx:\r\n" + ex.ToString());
 
                     ps.ConsoleGreenCheck($"Recovered! Using backup {Directory.GetCurrentDirectory() + '\\' + clipjson.First().clips.First().broadcaster.name}-backup.json...");
 

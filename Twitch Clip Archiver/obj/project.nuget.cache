@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zOHwk4qW6Nclrhr6SvhYpuGX1SKIrEFOrQzJtMq/3pBmq3buom5l1AQQ7Z92aSA6MPsHf13zqR+RysSlYqAJzA==",
+  "dgSpecHash": "1PM/8lstblgJECmQBgtyd/iGJAbBE2eAJykg6Ux5n0NsN4llGPShdxmqlNU9CAasQxv8Ve9Ba2gznoCxjLn8PA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alex\\Projects\\C#\\Twitch Clip Archiver\\Twitch Clip Archiver\\Twitch Clip Archiver.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,9 @@
     "C:\\Users\\Alex\\.nuget\\packages\\selenium.firefox.webdriver\\0.26.0\\selenium.firefox.webdriver.0.26.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\selenium.webdriver\\4.0.0-alpha05\\selenium.webdriver.4.0.0-alpha05.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.4\\microsoft.netcore.app.runtime.win-x86.3.1.4.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.4\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.4.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.4\\microsoft.aspnetcore.app.runtime.win-x86.3.1.4.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
