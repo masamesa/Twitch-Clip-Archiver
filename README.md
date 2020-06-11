@@ -13,7 +13,9 @@
 
 32 bit: https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.300-windows-x86-installer
 
-<a href="https://www.mozilla.org/en-US/firefox/download/thanks/">Firefox</a>( https://www.mozilla.org/en-US/firefox/download/thanks/)
+Firefox
+
+(64/32) bit: https://www.mozilla.org/en-US/firefox/download/thanks/)
 
 <b> DOWNLOAD BINARIES </b>
 
