@@ -2,6 +2,14 @@
 <img src="https://i.gyazo.com/a9255a38f630e6f38adf1c734318f0a8.png">
 <img src="https://i.gyazo.com/94d6b0b3581510c44c07d740aed99d8a.png">
 
+<b> WARNING </b>
+
+Due to twitch's api not being so great, there's been complaints about their api not fetching ALL the clips from a streamers channel. This is nothing I can resolve on my own, however this still fetches a vast majority of the clips. If you have an issue with this, please complain to twitch, there's nothing I can do.
+
+https://discuss.dev.twitch.tv/t/new-twitch-api-getclips-missing-some-clips-but-not-all/23888
+
+https://discuss.dev.twitch.tv/t/clips-api-missing-some-clips/22717/2
+
 <b> SUPPORT </b>
 
 Windows 64/32 bit ✔
@@ -27,7 +35,7 @@ The program must be ran with admin privileges in order to not break upon startup
 
 <b> DOWNLOAD BINARIES </b>
 
-<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4.1">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4.1)
+<a href="https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4.2">Click here for the .exe!</a>(https://github.com/masamesa/Twitch-Clip-Archiver/releases/tag/1.4.2)
 
 
 <b> Getting a "Client ID" </b>
