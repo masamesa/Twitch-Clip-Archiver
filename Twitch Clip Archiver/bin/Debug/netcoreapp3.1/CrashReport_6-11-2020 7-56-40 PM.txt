@@ -1,0 +1,6 @@
+OpenQA.Selenium.DriverServiceNotFoundException: The geckodriver.exe file does not exist in the current directory or in a directory on the PATH environment variable. The driver can be downloaded at https://github.com/mozilla/geckodriver/releases.
+   at OpenQA.Selenium.DriverService.FindDriverServiceExecutable(String executableName, Uri downloadUrl)
+   at OpenQA.Selenium.Firefox.FirefoxDriverService.CreateDefaultService()
+   at OpenQA.Selenium.Firefox.FirefoxDriver.CreateService(FirefoxOptions options)
+   at OpenQA.Selenium.Firefox.FirefoxDriver..ctor(FirefoxOptions options)
+   at Twitch_Clip_Archiver.Extensions.FetchClips.Download(String path, Int32 lcount, Int32 currentpos) in C:\Users\Alex\Projects\C#\Twitch Clip Archiver\Twitch Clip Archiver.Extensions\FetchClips.cs:line 152

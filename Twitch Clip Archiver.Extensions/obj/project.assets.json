@@ -72,78 +72,6 @@
           "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
         }
       }
-    },
-    ".NETStandard,Version=v2.0/win10-x86": {
-      "HtmlAgilityPack/1.11.24": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
-        }
-      },
-      "Microsoft.NETCore.Platforms/1.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        }
-      },
-      "NETStandard.Library/2.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0"
-        },
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "build": {
-          "build/netstandard2.0/NETStandard.Library.targets": {}
-        }
-      },
-      "Newtonsoft.Json/12.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Selenium.Firefox.WebDriver/0.26.0": {
-        "type": "package",
-        "build": {
-          "build/Selenium.Firefox.WebDriver.targets": {}
-        }
-      },
-      "Selenium.WebDriver/4.0.0-alpha05": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/WebDriver.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/WebDriver.dll": {}
-        }
-      },
-      "Twitch Clip Archiver.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Twitch Clip Archiver.Models.dll": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -498,11 +426,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win10-x86": {
-        "#import": []
       }
     }
   }

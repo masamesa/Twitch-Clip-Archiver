@@ -12,6 +12,7 @@ namespace Twitch_Clip_Archiver.Extensions
     {
         public Task<Tuple<int, List<ClipModel>>> clipCount(List<ClipModel> clipcomp)
         {
+            start:
             int clips = 0;
             int i = 0;
             foreach (var cliparray in clipcomp)
@@ -21,7 +22,7 @@ namespace Twitch_Clip_Archiver.Extensions
                 else
                 {
                     clipcomp.RemoveAt(i);
-                    break;
+                    goto start;
                 }
                 i++;
             }
